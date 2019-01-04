@@ -40,7 +40,9 @@ class TeamsController < ApplicationController
   end
 
   def join_league_create
+    @league = League.find(params[:id])
     @team = Team.create(team_params)
+
 
     if @team.valid?
       redirect_to @team

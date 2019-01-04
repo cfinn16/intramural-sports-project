@@ -20,7 +20,7 @@
       <% end %>
       </div>
       <div class="btn btn-lg btn-primary">
-        <a><%= link_to "Join this league!", join_league_path, :class => "btn" %></a>
+        <a><%= link_to "Create a New Team in This League", join_league_path, :class => "btn" %></a>
       </div>
 
     <% else %>
@@ -34,5 +34,5 @@
 <br><br>
 
 <div class="container-fluid text-center">
-  <h5><%= link_to "Back to Main Menu", city_path(@league.city) %></h5>
+  <h5><%= link_to "Back", city_path(@league.city) %></h5>
 </div>

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get "/leagues/:id/new", to: "teams#join_league", as: "join_league"
 
+  post "/leagues/:id/", to: "teams#join_league_create"
+
   post "/teams/:id/payment", to: "teams#payment", as: "payment"
 
   resources :teams, only: [:new, :create, :show]

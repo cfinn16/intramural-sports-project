@@ -13,14 +13,20 @@
 </div>
 
 <div class="container-fluid">
-  <%= form_for @team do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br><br>
-    <%= f.label :paid %>
-    <%= f.check_box :paid %><br><br>
-    <%= f.label :league_id %>
-    <%= f.collection_select(:league_id, League.all, :id, :name) %><br><br>
-    <%= f.submit %>
+  <%= form_for @team, :html => {:class => "form"} do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control w-50" %>
+    </div>
+    <div class="checkbox">
+      <%= f.label :paid %>
+      <%= f.check_box :paid %>
+    </div>
+    <div class="dropdown">
+      <%= f.label :league_id %>
+      <%= f.collection_select(:league_id, League.all, :id, :name, {class: "dropdown-menu w-50"})%>
+    </div>
+    <%= f.submit "Create Team", class: "btn btn-default btn-primary" %>
 
   <% end %>
 </div>

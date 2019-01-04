@@ -1,24 +1,33 @@
-<h2>Team Name: <%= @team.name %></h2>
+<div class="container-fluid">
+  <div class="card mx-auto w-50">
+    <div class="card-body">
+      <h1 class="card-title"><%= @team.name %></h1>
+    </div>
+    <div class="card-body">
+      <h3 class="card-text">League: <%= @team.league.name%></h3>
 
-<h3>League: <%= @team.league.name%></h3>
-
-<h3>Paid?
-  <% if @team.paid%>
-    Yes.</h3>
-  <% else %>
-    Not yet.</h3>
-    <%= button_to "Make payment now", payment_path %>
-  <% end %><br><br>
-
-<h3>Roster</h3>
-<% @team.players.each do |player| %>
-<ul>
-  <li><%= link_to player.name, player_path(player) %></li>
-</ul>
-<% end %>
-
-<%= button_to "Join the #{@team.name}", add_to_teams_path(@team)%> <br><br>
-
+        <% if @team.paid%>
+          <h4 class="card-text">Has paid.</h4>
+        <% else %>
+          <h4 class="card-text">Still needs to pay.</h4>
+          <div class="card-body">
+            <%= button_to "Make payment now", payment_path %>
+          </div>
+        <% end %>
+    </div>
+    <div class="card-body">
+      <h3>Roster</h3>
+      <% @team.players.each do |player| %>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= link_to player.name, player_path(player) %></li>
+      </ul>
+      <% end %>
+    </div>
+    <div class="card-body">
+      <%= button_to "Join the #{@team.name}", add_to_teams_path(@team)%>
+    </div>
+  </div>
+</div>
 
 
 <%= link_to "Back to #{@team.league.city.name} Menu", city_path(@team.league.city) %>

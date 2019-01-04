@@ -1,29 +1,38 @@
-<h1><%= @league.name.capitalize %></h1>
-
-<h3>Sport: <%= @league.sport %></h3>
-
-<h3>City: <%= @league.city.name %></h3>
-
-<h3>Day: <%= @league.day_of_week%></h3>
-
-<h3>Cost: $<%= @league.cost %></h3>
-
-<h3>Experience Level: <%= @league.level %> </h3>
-
-<% if @league.teams.size > 0 %>
-  <h3>Teams</h3>
-
-    <% @league.teams.each do |team| %>
-    <ul>
-      <li><%= link_to team.name, team_path(team) %></li>
+<div class="container-fluid">
+  <div class="card mx-auto w-50">
+    <img class="card-img-top" src=<%= @image_url %> alt="Sport photo">
+    <div class="card-body">
+      <h1 class="card-title"><%= @league.name.split.map(&:capitalize).join(' ') %></h1>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">City: <%= @league.city.name %></li>
+      <li class="list-group-item">Cost: $<%= @league.cost %></li>
+      <li class="list-group-item">Experience Level: <%= @league.level %> </li>
     </ul>
-    <% end %>
-    <h3><%= link_to "Join this league!", join_league_path  %> </h3>
+    <% if @league.teams.size > 0 %>
+      <div class="card-body">
+      <h4 class="card-text">Teams</h4>
 
-<% else %>
-  <h3><%= link_to "Be the first team to sign up!", join_league_path  %> </h3>
-<% end %><br>
+      <% @league.teams.each do |team| %>
+      <ul>
+        <li><%= link_to team.name, team_path(team) %></li>
+      </ul>
+      <% end %>
+      </div>
+      <div class="btn btn-lg btn-primary">
+        <a><%= link_to "Join this league!", join_league_path, :class => "btn" %></a>
+      </div>
 
-<%= link_to "Update Info", edit_league_path(@league) %><br><br>
+    <% else %>
+    <div class="card-body">
+      <h3><%= link_to "Be the first team to sign up!", join_league_path  %></h3>
+    </div>
+    <% end %><br>
 
-<%= link_to "Back to Main Menu", city_path(@league.city) %>
+  </div>
+</div>
+<br><br>
+
+<div class="container-fluid text-center">
+  <h5><%= link_to "Back to Main Menu", city_path(@league.city) %></h5>
+</div>

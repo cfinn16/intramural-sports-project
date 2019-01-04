@@ -31,12 +31,22 @@ class TeamsController < ApplicationController
     @league = League.find(params[:id])
     @team = Team.new
 
-    render :join
+    # if @team.valid?
+    #   redirect_to @team
+    # else
+    #   @errors = @team.errors.full_messages
+    #   render :join_league
+    # end
+  end
+
+  def join_league_create
+    @team = Team.create(team_params)
 
     if @team.valid?
       redirect_to @team
     else
       @errors = @team.errors.full_messages
+      render :join_league
     end
   end
 

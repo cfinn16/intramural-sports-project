@@ -21,6 +21,7 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find(params[:id])
+    @image_url = "/assets/" + @league.sport.downcase + ".jpg"
   end
 
   def new_in_city

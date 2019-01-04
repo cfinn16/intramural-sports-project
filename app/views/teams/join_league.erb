@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <h1>Join <%= @league.name %></h1>
+</div>
+
+<div class="container-fluid">
+  <ul>
+    <% if @errors %>
+      <% @errors.each do |error| %>
+        <li> <%= error %> </li>
+      <% end %>
+    <% end%>
+  </ul>
+</div>
+
+<div class="container-fluid">
+    <%= form_for @team, :html => {:class => "form"} do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control w-50" %>
+      </div>
+      <div class="checkbox">
+        <%= f.label :paid %>
+        <%= f.check_box :paid %>
+      </div>
+      <%= f.hidden_field :league_id, :value => @league.id %>
+
+      <%= f.submit "Join League", class: "btn btn-default btn-primary" %>
+
+    <% end %>
+</div>

@@ -1,0 +1,24 @@
+<h2>Team Name: <%= @team.name %></h2>
+
+<h3>League: <%= @team.league.name%></h3>
+
+<h3>Paid?
+  <% if @team.paid%>
+    Yes.</h3>
+  <% else %>
+    Not yet.</h3>
+    <%= button_to "Make payment now", payment_path %>
+  <% end %><br><br>
+
+<h3>Roster</h3>
+<% @team.players.each do |player| %>
+<ul>
+  <li><%= link_to player.name, player_path(player) %></li>
+</ul>
+<% end %>
+
+<%= button_to "Join the #{@team.name}", add_to_teams_path(@team)%> <br><br>
+
+
+
+<%= link_to "Back to #{@team.league.city.name} Menu", city_path(@team.league.city) %>

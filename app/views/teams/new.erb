@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <h1>Create a New Team</h1>
+</div>
+
+<div class="container-fluid">
+  <ul>
+    <% if @errors %>
+      <% @errors.each do |error| %>
+      <li> <%= error %> </li>
+      <% end %>
+    <% end%>
+  </ul>
+</div>
+
+<div class="container-fluid">
+  <%= form_for @team do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br><br>
+    <%= f.label :paid %>
+    <%= f.check_box :paid %><br><br>
+    <%= f.label :league_id %>
+    <%= f.collection_select(:league_id, League.all, :id, :name) %><br><br>
+    <%= f.submit %>
+
+  <% end %>
+</div>

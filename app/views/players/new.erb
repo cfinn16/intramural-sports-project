@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <h2>Create a New Player Profile</h2>
+</div>
+
+<div class="container-fluid">
+  <ul>
+    <% if @errors %>
+      <% @errors.each do |error| %>
+      <li> <%= error %> </li>
+      <% end %>
+    <% end%>
+  </ul>
+</div>
+
+<div class="container-fluid">
+  <%= form_for @player do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br><br>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br><br>
+    <%= f.label :team %>
+    <%= f.collection_select(:team_ids, Team.all, :id, :name)%><br><br>
+    <%= f.submit %>
+
+  <% end %>
+</div>

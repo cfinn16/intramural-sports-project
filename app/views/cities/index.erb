@@ -1,0 +1,18 @@
+
+<div class="container-fluid">
+  <nav class="navbar navbar-default justify-content-between">
+    <h1 class="navbar-brand">BlogSports</h1>
+    <nav class="nav justify-content-center">
+      <a class="nav-link"><%= link_to "Sign In", login_path %></a>
+      <a class="nav-link"><%= link_to "Create a League", new_league_path %></a>
+    </nav>
+  </nav>
+</div>
+
+<div class="parent">
+  <% @cities.each do |city| %>
+    <%= div_for(city, class: "text-center") do %>
+      <div class="city-name"><%= link_to city.name, city_path(city) %></div>
+    <% end %>
+  <% end %>
+</div>

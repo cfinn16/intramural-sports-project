@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <h2><%= @player.name %></h2>
+</div>
+
+<div class="container-fluid">
+  <h4>Teams</h4>
+
+    <% @player.teams.each do |team| %>
+    <ul>
+      <li><%= link_to team.name, team_path(team) %></li>
+    </ul>
+    <% end %>
+</div>
+
+<div class="container-fluid">
+  <p>Contact: <%= @player.email %></p>
+</div>
+
+<div class="container-fluid">
+  <%= link_to "My Home Page", city_path(@player.teams.first.league.city) %>
+</div>

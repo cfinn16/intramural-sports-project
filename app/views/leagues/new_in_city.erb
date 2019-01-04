@@ -13,18 +13,27 @@
 </div>
 
 <div class="container-fluid">
-  <%= form_for @league do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br><br>
-    <%= f.label :sport %>
-    <%= f.select :sport, %w(Soccer Basketball Softball Kickball Dodgeball Volleyball Hockey Football) %><br><br>
-    <%= f.label :day_of_week %>
-    <%= f.select :day_of_week, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %><br><br>
-    <%= f.label :cost %>
-    <%= f.number_field :cost %><br><br>
-    <%= f.label :level %>
-    <%= f.select :level, ["Beginner", "Intermediate", "Experienced"] %><br><br>
+  <%= form_for @league, :html => {:class => "form"} do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control w-25" %>
+    <div class="dropdown">
+      <%= f.label :sport %><br>
+      <%= f.select :sport, %w(Soccer Basketball Softball Kickball Dodgeball Volleyball Hockey Football), {class: "dropdown-menu"} %>
+    </div>
+    <div class="dropdown">
+      <%= f.label :day_of_week %><br>
+      <%= f.select :day_of_week, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], {class: "dropdown-menu"} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :cost %>
+      <%= f.number_field :cost, class: "form-control w-25", type: "number" %>
+    </div>
+    <div class="dropdown">
+      <%= f.label :level %><br>
+      <%= f.select :level, ["Beginner", "Intermediate", "Experienced"] %>
+    </div>
     <%= f.hidden_field :city_id, :value => @city.id %><br><br>
-    <%= f.submit %>
+    <%= f.submit "Create League", class: "btn btn-default btn-primary" %>
   <% end %>
 </div>

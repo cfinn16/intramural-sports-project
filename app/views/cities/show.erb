@@ -6,6 +6,7 @@
     <nav class="nav justify-content-center">
       <a class="nav-link"><%= link_to "Most Popular League", most_popular_path(@city) %></a>
       <a class="nav-link"><%= link_to "Main Menu", cities_path %></a>
+      <a class="nav-link"><%= link_to "My Profile", player_path(current_user) %></a>
     </nav>
   <form class="form-inline">
     <%= form_tag(city_path, method: :get) do %>
@@ -35,5 +36,10 @@
 </div>
 
 <div class="container-fluid">
-  <%= button_to "Start a New League in #{@city.name}", new_in_city_path(@city), :method => "get" %><br><br>
+  <div class="row">
+    <h5>Don't see the league you want to join?</h5>
+  </div>
+  <div class="btn btn-primary">
+    <a><%= link_to "Start a New League in #{@city.name}", new_in_city_path(@city), :class => "btn" %></a>
+  </div>
 </div>

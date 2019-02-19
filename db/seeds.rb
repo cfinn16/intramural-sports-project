@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-            # "name" "sport" "day_of_week" "cost" "level"
 League.create(name: 'Tuesday Kickball', sport: 'kickball', day_of_week: 'Tuesday', cost: 200, level: 'beginner', city_id: 1)
 League.create(name: 'Wednesday Kickball', sport: 'kickball', day_of_week: 'Wednesday', cost: 300, level: 'intermediate', city_id: 2)
 League.create(name: 'Thursday Soccer', sport: 'soccer', day_of_week: 'Thursday', cost: 400, level: 'intermediate', city_id: 3)

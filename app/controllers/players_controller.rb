@@ -1,9 +1,5 @@
 class PlayersController < ApplicationController
 
-  def login
-
-  end
-
   def new
     @player = Player.new
   end
@@ -22,7 +18,6 @@ class PlayersController < ApplicationController
   def show
     @player = Player.find(params[:id])
   end
-
 
   private
 

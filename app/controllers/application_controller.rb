@@ -5,5 +5,4 @@ class ApplicationController < ActionController::Base
     Player.find_by({ id: session[:user_id] })
   end
 
-
 end

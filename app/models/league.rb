@@ -12,6 +12,3 @@ class League < ApplicationRecord
 
 
 end
-
-
-# link: Rails.application message: "Sorry, we don't offer %{value}. See the full list of <a href="%{link}">eligible sports here</a>."}

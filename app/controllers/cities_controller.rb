@@ -15,7 +15,6 @@ class CitiesController < ApplicationController
   def popular
     @city = City.find(params[:id])
     @league = @city.most_popular
-
     redirect_to @league
   end
 

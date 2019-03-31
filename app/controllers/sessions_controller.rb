@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def create
-
+    byebug
     @player = Player.find_by(name: params[:session][:name])
     if params[:session][:email] == @player.email
       session[:user_id] = @player.id

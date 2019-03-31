@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  post 'teams/:id/add_to_teams', to: 'teams#add_to_teams', as: "add_to_teams"
+  post '/teams/:id/add_to_teams', to: 'teams#add_to_teams', as: "add_to_teams"
 
   get "/cities/:id/new", to: "leagues#new_in_city", as: "new_in_city"
 
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   get "/popular/:id", to: "cities#popular", as: "most_popular"
 
+  get "/players/current", to: "players#current_player", as: "current_player"
 
   resources :players, only: [:new, :create, :show]
 

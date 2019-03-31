@@ -32,6 +32,7 @@ gem 'record_tag_helper', '~> 1.0'
 gem 'faker', '~> 1.9', '>= 1.9.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'rb-readline'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

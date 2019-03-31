@@ -6,7 +6,7 @@
     <nav class="nav justify-content-center">
       <a class="nav-link"><%= link_to "Most Popular League", most_popular_path(@city) %></a>
       <a class="nav-link"><%= link_to "Main Menu", cities_path %></a>
-      <a class="nav-link"><%= link_to "My Profile", player_path(current_user) %></a>
+      <a class="nav-link"><%= link_to "My Profile", current_player_path %></a>
     </nav>
   <form class="form-inline">
     <%= form_tag(city_path, method: :get) do %>

@@ -19,6 +19,11 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
   end
 
+  def current_player
+    @player = Player.find_by({ id: session[:user_id] })
+    render :show
+  end
+
   private
 
   def player_params

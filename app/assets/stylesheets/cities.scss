@@ -14,20 +14,23 @@ h1 {
   flex: 1 0 30%;
   max-width: 50%;
   margin: 20px;
-  height: 30vh;
+  height: 35vh;
   background-color: #191970;
   vertical-align: middle;
   text-align: center;
 }
 
 .city-name {
-  background: rgba(255, 255, 255, 0.75);
+  color: white;
   display: inline;
-  padding: 0.3rem;
-  font-size: 30px;
-
+  padding: 0.15em;
+  font-size: 2em;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+}
+
+a:hover {
+  color: #7EF9FF
 }
 
 .nav a {
@@ -44,47 +47,47 @@ h1 {
   object-fit: cover;
 }
 
-#city_1 {
+#city_1 .card-body {
   background-image: url("https://images.unsplash.com/photo-1521330376889-088f238e793b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
   background-size: 100%;
 }
 
-#city_2 {
+#city_2 .card-body{
   background-image: url("https://images.unsplash.com/photo-1458086294493-3a5a041289ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
   background-size: 100%;
 }
 
-#city_3 {
+#city_3 .card-body{
   background-image: url("https://images.unsplash.com/photo-1429019885980-e07c0774c492?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80");
   background-size: 100%;
 }
 
-#city_4 {
+#city_4 .card-body{
   background-image: url("https://images.unsplash.com/photo-1464701116432-f476204d6c45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
   background-size: 100%;
 }
 
-#city_5 {
+#city_5 .card-body{
   background-image: url("https://images.unsplash.com/photo-1526486302639-778115f9b298?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80");
   background-size: 100% 100%;
 }
 
-#city_6 {
+#city_6 .card-body{
   background-image: url("https://images.unsplash.com/photo-1481991990414-7802ae5de1e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1572&q=80");
   background-size: 100%;
 }
 
-#city_7 {
+#city_7 .card-body{
   background-image: url("https://images.unsplash.com/photo-1500347948006-78a384d250f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
   background-size: 100%;
 }
 
-#city_8 {
+#city_8 .card-body{
   background-image: url("https://images.unsplash.com/photo-1494522855154-9297ac14b55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
   background-size: 100% 100%;
 }
 
-#city_9 {
+#city_9 .card-body{
   background-image: url("https://images.unsplash.com/photo-1501381551628-86d4726f786b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1778&q=80");
   background-size: 100% 100%;
 }

@@ -15,8 +15,12 @@
 
 <div class="parent">
   <% @cities.each do |city| %>
-    <%= div_for(city, class: "text-center") do %>
-      <div class="city-name"><%= link_to city.name, city_path(city) %></div>
+    <%= div_for(city, class: "card") do %>
+      <div class="card-header">
+        <%= link_to city.name, city_path(city), class: 'city-name' %>
+      </div>
+      <div class="card-body">
+      </div>
     <% end %>
   <% end %>
 </div>

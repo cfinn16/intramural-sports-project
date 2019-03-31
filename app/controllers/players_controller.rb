@@ -8,6 +8,7 @@ class PlayersController < ApplicationController
     @player = Player.create(player_params)
 
     if @player.valid?
+      session[:user_id] = @player.id
       redirect_to @player
     else
       @errors = @player.errors.full_messages

@@ -2,7 +2,7 @@ class Player < ApplicationRecord
   has_many :team_players
   has_many :teams, through: :team_players
 
-  validates :name, presence: true
+  validates(:name, {presence: true, uniqueness: true})
   validates(:email, {presence: true, uniqueness: true})
   validates_format_of :email, :with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   validate :check_for_full_name

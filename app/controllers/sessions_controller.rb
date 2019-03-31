@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def create
-    byebug
     @player = Player.find_by(name: params[:session][:name])
     if params[:session][:email] == @player.email
       session[:user_id] = @player.id
@@ -13,7 +12,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete :username, :email
+    session[:user_id] = nil
+    render 'new'
   end
 
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'cities#index'
   resources :cities, only: [:index, :show]
   resources :leagues, except: [:index, :destroy]
   delete "/leagues/:id", to: "leagues#destroy", as: "destroy"
